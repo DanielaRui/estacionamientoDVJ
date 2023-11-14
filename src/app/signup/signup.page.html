@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Sign up - Regístrate
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Sign up - Regístrate</ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <ion-img class="logo-img" src="../assets/imagenes/logo.png"></ion-img>
+ 
+  <br />
+    <form class="formulario">
+      <ion-item class="input-custom">
+        <ion-label position="floating" color="gray"><b>Name/Nombre</b></ion-label>
+        <ion-input placeholder="Ingresa tu nombre"></ion-input>
+      </ion-item>
+    
+      <br />
+      <ion-item class="input-custom">
+        <ion-label position="floating" color="gray"><b>E-mail/Correo</b></ion-label>
+        <ion-input placeholder="Ingresa tu correo"></ion-input>
+      </ion-item>
+    
+      <br />
+      <ion-item class="input-custom">
+        <ion-label position="floating" color="gray"><b>Password/Contraseña</b></ion-label>
+        <ion-input type="password" placeholder="Ingresa tu contraseña"></ion-input>
+      </ion-item>
+      <br />
+  
+    <ion-item class="input-custom">
+      <ion-label position="floating" color="gray"><b>Shift/Turno</b></ion-label>
+      <ion-select>
+        <ion-select-option value="Matutino">Matutino</ion-select-option>
+        <ion-select-option value="Vespertino">Vespertino</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br />
+    <ion-button color="success">Sign Up-Registrarte</ion-button>
+  </form>
+  
+ <br/>
+  
+ 
+ 
+</ion-content>

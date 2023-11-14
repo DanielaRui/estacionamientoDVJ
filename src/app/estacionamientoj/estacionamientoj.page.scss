@@ -1,0 +1,23 @@
+ion-toolbar {
+    --background: #DFF3E8;
+    text-align: center;
+    color: gray;
+  }
+  
+  ion-content {
+    --background: #DFF3E8;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .imagen-centrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  

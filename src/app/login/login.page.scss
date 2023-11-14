@@ -1,0 +1,79 @@
+ion-toolbar {
+    --background: #DFF3E8;
+    text-align: center;
+    color: gray;
+  }
+  
+  ion-content {
+    --background: #DFF3E8;
+    overflow-y: hidden; /* Evita el scroll vertical en dispositivos móviles */
+  }
+  
+  h1 {
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 38px;
+    margin-bottom: 30%;
+  }
+  
+  .imagen-centrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Ajusta la altura según tus necesidades */
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 30%;
+    z-index: 2; /* Asegura que la imagen tenga un índice z superior al del formulario */
+  }
+  
+  .formulario {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Asegura que los elementos posicionados dentro respeten su contenedor */
+    z-index: 1; /* Índice z superior al de la ion-content, pero inferior al de la imagen */
+    background-color: #DFF3E8; /* Agrega un fondo similar al color de la página para que no se vea cortado */
+    padding: 20px; /* Añade espacio alrededor del formulario */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.274); /* Sombra ligera */
+    width: 80%; /* Ajusta el ancho del formulario en dispositivos móviles */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+  }
+  
+  .input-custom {
+    --background: transparent; /* Fondo transparente */
+    --border-radius: 10px; /* Bordes redondeados para rodear todo el input */
+    --border-width: 1px; /* Grosor del borde */
+    --border-color: #8a8a8a; /* Color del borde */
+    --highlight-color-focused: rgb(1, 141, 255);
+    width: 100%; /* Ajusta el ancho del ion-item según tus necesidades */
+    margin-bottom: 10px;
+  }
+  
+  ion-item {
+    height: auto;
+  }
+  
+  ion-input {
+    color: rgb(0, 0, 0); /* Color del texto en el input */
+  }
+  
+  ion-label[color="gray"] {
+    color: gray;
+  }
+  
+  ion-button {
+    width: 100%;
+  }
+  
+  .sign-upButton {
+    margin-top: 10%;
+  }
+  
+  
+  
