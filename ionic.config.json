@@ -1,0 +1,7 @@
+{
+  "name": "estacionamientoDVJ",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
