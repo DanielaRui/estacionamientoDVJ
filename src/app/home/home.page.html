@@ -1,19 +1,88 @@
-<ion-menu contentId="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu Content</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">This is the menu content.</ion-content>
-</ion-menu>
+<app-menu></app-menu>
+
 <div class="ion-page" id="main-content">
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>Menu</ion-title>
+      <ion-title>Estacionamiento A</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
+  
+  <ion-content>
+    <div>
+      <div> 
+        <div>
+          <div>
+            <p>Por favor seleccione la seccion en la que quiere estacionarse:</p>
+          </div>
+          <div>
+            <ion-list>
+              <ion-item>
+                <ion-select (ionChange)="filtroSeccionButton($event)">
+                  <ion-select-option value="A">A</ion-select-option>
+                  <ion-select-option value="B">B</ion-select-option>
+                  <ion-select-option value="C">C</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+        <div>
+          <p>Total de lugares: {{ Total == 0 ? "----" : Total}}</p>
+          <p>Lugares libres: {{ Libres == 0 ? "----" : Libres}}</p>
+          <p>Lugares ocupados: {{ Ocupados == 0 ? "----" : Ocupados}}</p>
+        </div>
+        <div>
+          <h2>Estacionamientos Favoritos</h2>
+          <div *ngFor="let estacionamiento of estacionamientosFavoritos">
+            <ion-card [color]="estacionamiento.estado === 'Ocupado' ? 'medium' : 'warning'" class="{{ estacionamiento.estado === 'Ocupado' ? 'text-secondary' : '' }}">
+              <ion-card-header>
+                <div>
+                  <ion-card-title>Lugar: {{ estacionamiento.numero }}</ion-card-title>
+                  <ion-card-subtitle>Estado: {{ estacionamiento.estado }}</ion-card-subtitle>
+                  <ion-button (click)="updateEstacionamientos(estacionamiento._id, estacionamiento.favorito)">
+                    <ion-icon slot="icon-only" name="star"></ion-icon>
+                  </ion-button>
+                </div>
+              </ion-card-header>
+            </ion-card>            
+          </div>
+        </div>
+        <div>
+          <h2>Estacionamientos Libres</h2>
+          <div *ngFor="let estacionamiento of estacionamientosLibres">
+            <ion-card color="success">
+              <ion-card-header>
+                <div>
+                  <ion-card-title>Lugar: {{estacionamiento.numero}}</ion-card-title>
+                  <ion-card-subtitle>Estado: {{estacionamiento.estado}}</ion-card-subtitle>
+                  <ion-button (click)="updateEstacionamientos(estacionamiento._id, estacionamiento.favorito)">
+                    <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+                  </ion-button>
+                </div>
+              </ion-card-header>
+            </ion-card>
+          </div>
+        </div>
+        <div>
+          <h2>Estacionamientos Ocupados</h2>
+          <div *ngFor="let estacionamiento of estacionamientosOcupados">
+            <ion-card color="danger">
+              <ion-card-header>
+                <div>
+                  <ion-card-title>Lugar: {{estacionamiento.numero}}</ion-card-title>
+                  <ion-card-subtitle>Estado: {{estacionamiento.estado}}</ion-card-subtitle>
+                  <ion-button (click)="updateEstacionamientos(estacionamiento._id, estacionamiento.favorito)">
+                    <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+                  </ion-button>
+                </div>
+              </ion-card-header>
+            </ion-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
 </div>

@@ -27,6 +27,19 @@ const routes: Routes = [
     path: 'estacionamientoj',
     loadChildren: () => import('./estacionamientoj/estacionamientoj.module').then( m => m.EstacionamientojPageModule)
   },
+  {
+    path: 'usuario',
+    loadChildren: () => import('./usuario/usuario.module').then( m => m.UsuarioPageModule)
+  },
+  {
+    path: 'estacionamiento-h',
+    loadChildren: () => import('./estacionamiento-h/estacionamiento-h.module').then( m => m.EstacionamientoHPageModule)
+  },
+  {
+    path: 'estacionamientoi',
+    loadChildren: () => import('./estacionamientoi/estacionamientoi.module').then( m => m.EstacionamientoiPageModule)
+  },
+
 ];
 
 @NgModule({

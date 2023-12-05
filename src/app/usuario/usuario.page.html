@@ -1,0 +1,96 @@
+<app-menu></app-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Ajustes de Usuario - User Settings</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <div class="form-container">
+      <h3>Opciones de cuenta</h3>
+      <h4>Account options</h4>
+      <br/>
+      <br/>
+      <ion-list>
+  
+        <!-- Selección de Cambio -->
+        <ion-item class="form-item">
+          <ion-label>Seleccionar Cambio</ion-label>
+          <ion-select interface="popover" placeholder="Select option - Selecciona una opci&oacute;n" [(ngModel)]="selectedOption" (ionChange)="updateForm()">
+            <ion-select-option class="custom-popover" value="name">Cambiar nombre</ion-select-option>
+            <ion-select-option class="custom-popover" value="email"> Cambiar correo</ion-select-option>
+            <ion-select-option class="custom-popover" value="password">Cambiar contraseña</ion-select-option>
+            <ion-select-option class="custom-popover" value="shift">Cambiar el turno</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+        
+        <!-- Formulario para Cambiar Contraseña -->
+        <ng-container *ngIf="selectedOption === 'password'">
+          <ion-item class="form-item">
+            <ion-label>Contraseña Actual: </ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+          <ion-item class="form-item">
+            <ion-label>Nueva Contraseña:</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+          <ion-item class="form-item">
+            <ion-label>Confirmar Contraseña: </ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </ng-container>
+  
+        <!-- Formulario para Cambiar Correo -->
+        <ng-container *ngIf="selectedOption === 'email'">
+          <ion-item class="form-item">
+            <ion-label>Nuevo Correo:</ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+          <ion-item class="form-item">
+            <ion-label>Confirmar contraseña:</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </ng-container>
+  
+        <!-- Formulario para Cambiar Turno de Escuela -->
+        <ng-container *ngIf="selectedOption === 'shift'">
+          <ion-item class="form-item">
+            <ion-label>Nuevo turno:</ion-label>
+            <ion-select>
+              <ion-select-option value="Matutino">Matutino</ion-select-option>
+              <ion-select-option value="Vespertino">Vespertino</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="form-item">
+            <ion-label>Confirmar contraseña:</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+          
+        </ng-container>
+  
+        <!-- Formulario para Cambiar Nombre -->
+        <ng-container *ngIf="selectedOption === 'name'">
+          <ion-item class="form-item">
+            <ion-label>Nuevo nombre:</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item class="form-item">
+            <ion-label>Confirmar contraseña:</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </ng-container>
+  
+      </ion-list>
+  
+      <ion-button expand="full" class="submit-button">Guardar Cambios - Save Changes</ion-button>
+    </div>
+  
+  </ion-content>
+</div>

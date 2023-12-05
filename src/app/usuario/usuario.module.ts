@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EstacionamientojPageRoutingModule } from './estacionamientoj-routing.module';
+import { UsuarioPageRoutingModule } from './usuario-routing.module';
 
-import { EstacionamientojPage } from './estacionamientoj.page';
+import { UsuarioPage } from './usuario.page';
 import { MenuModule } from '../components/menu/menu.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { MenuModule } from '../components/menu/menu.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    EstacionamientojPageRoutingModule,
+    UsuarioPageRoutingModule,
     MenuModule
   ],
-  declarations: [EstacionamientojPage]
+  declarations: [UsuarioPage]
 })
-export class EstacionamientojPageModule {}
+export class UsuarioPageModule {}

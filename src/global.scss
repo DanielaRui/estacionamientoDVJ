@@ -24,3 +24,20 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-toolbar {
+    --background: #3e6d8d;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+ion-content {
+    --background: #DFF3E8;
+}
+ion-content.menu{
+    --background: rgb(31, 31, 31);
+}
+
+
+.custom-popover {
+    --background: rgb(20, 48, 65) !important;
+  }
